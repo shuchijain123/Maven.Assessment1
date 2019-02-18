@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part3;
+import java.awt.*;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Created by leon on 2/16/18.
@@ -11,6 +13,7 @@ public class PetOwner {
      */
     String name = "Shuchi";
     Pet[] pets = new Pet[]{};
+    private ArrayList<Pet> arrayList = new ArrayList<Pet>(Arrays.asList(pets));
 
 
     public PetOwner(String name, Pet... pets) {
@@ -25,11 +28,16 @@ public class PetOwner {
 
 
     public void addPet(Pet pet) {
+        arrayList.add(pet);
 
-        Pet[] pets = new Pet[]{};
 
 
-       pets[0]= pet;
+
+
+
+
+
+
 
 
 
@@ -41,6 +49,7 @@ public class PetOwner {
      */
     public void removePet(Pet pet) {
         Pet newPet = new Dog();
+        arrayList.remove(pet);
 
 
     }
@@ -90,6 +99,7 @@ public class PetOwner {
      * @return the name property of the Pet
      */
     public String getName() {
+
 return name;
 
     }

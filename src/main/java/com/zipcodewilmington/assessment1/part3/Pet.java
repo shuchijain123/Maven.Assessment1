@@ -15,6 +15,9 @@ public abstract class Pet implements Animal {
 
     String name;
     int age;
+
+
+
     PetOwner expectedOwner = null;
 
 
@@ -86,24 +89,6 @@ public abstract class Pet implements Animal {
 
 
     }
-    public void getOwner(PetOwner newPetOwner) {
-
-        this.expectedOwner = expectedOwner;
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -112,9 +97,10 @@ public abstract class Pet implements Animal {
     public PetOwner getOwner()
 
     {
-        PetOwner po = new PetOwner(null,  null);
+        Pet p = new Dog();
+        PetOwner po = new PetOwner(null,  p);
 
-        po.getPets();
+
 
 
 return po;
