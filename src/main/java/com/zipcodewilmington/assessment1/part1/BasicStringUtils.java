@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part1;
 
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -9,7 +10,20 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+
+
+
+
+      String s1 = str.substring(0,1).toUpperCase();
+        String capstring = s1 + str.substring(1);
+
+
+
+
+
+
+
+        return capstring;
     }
 
     /**
@@ -17,7 +31,19 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        String reverse = "";
+
+
+
+        for (int i=str.length()-1; i>=0;i--){
+
+            reverse = reverse+str.charAt(i);
+
+
+
+        }
+
+        return reverse;
     }
 
     /**
@@ -25,7 +51,17 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+
+       BasicStringUtils bu = new BasicStringUtils ();
+
+        String reversestring = bu.reverse(str);
+
+        String Camcase = bu.camelCase(reversestring);
+
+
+
+          return Camcase;
+
     }
 
 
@@ -34,7 +70,10 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+
+        str = str.substring(1,str.length()-1);
+
+        return str;
     }
 
     /**
@@ -42,6 +81,22 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+
+        char [] carr = str.toCharArray();
+
+        for (int i=0 ; i< carr.length; i++)
+        {
+            if (Character.isUpperCase(carr[i])){
+
+                carr[i]= Character.toLowerCase(carr[i]);
+            }
+
+
+            else if (Character.isLowerCase(carr[i])){
+
+                carr[i]= Character.toUpperCase(carr[i]);
+            }
+        }
+        return new String(carr);
     }
 }

@@ -1,9 +1,15 @@
 package com.zipcodewilmington.assessment1.part2;
 
+
+import com.zipcodewilmington.assessment1.part1.BasicStringUtils;
+
 /**
  * Created by leon on 2/16/18.
  */
-public class StringUtils {
+public class StringUtils extends BasicStringUtils {
+
+
+
 
     /**
      * @param sentence a string containing words delimited by spaces, representative of a sentence
@@ -11,7 +17,11 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return an array of strings, each element representative of a respective word in the sentence
      */
     public static String[] getWords(String sentence) {
-        return null;
+
+
+
+
+        return sentence.split(" ");
     }
 
 
@@ -21,7 +31,18 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word of the sentence
      */
     public static String getFirstWord(String sentence) {
-        return null;
+        String firstword = "";
+
+        String [] strarr = sentence.split(" ");
+
+        for (int i=0; i<strarr.length;i++){
+            firstword = strarr[0].toString();
+
+
+        }
+
+        return firstword;
+
     }
 
     /**
@@ -30,7 +51,14 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
+
+         BasicStringUtils bu = new BasicStringUtils ();
+        StringUtils su = new StringUtils();
+
+        String firword = su.getFirstWord(sentence);
+        String revword = bu.reverse(firword);
+
+         return revword;
     }
 
     /**
@@ -39,7 +67,11 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order with the first character capitalized
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
-        return null;
+        BasicStringUtils bu = new BasicStringUtils ();
+        StringUtils su = new StringUtils();
+        String revword = su.reverseFirstWord(sentence);
+        String camel = bu.camelCase(revword);
+        return camel;
     }
 
 
@@ -50,7 +82,19 @@ public class StringUtils {
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        return null;
+        BasicStringUtils bu = new BasicStringUtils ();
+        StringUtils su = new StringUtils();
+
+        StringBuilder sb = new StringBuilder(str);
+
+
+        sb.deleteCharAt(index);
+
+        String result = sb.toString();
+
+
+        return result;
+
     }
 
 }
