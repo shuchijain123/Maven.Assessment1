@@ -72,7 +72,7 @@ public class Dog extends Pet {
     public Dog() {
         this.name = "Dog name";
         this.age =0;
-        
+
     }
     public PetOwner getOwner() {
         return expectedOwner;
