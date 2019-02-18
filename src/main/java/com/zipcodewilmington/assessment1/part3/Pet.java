@@ -15,6 +15,7 @@ public abstract class Pet implements Animal {
 
     String name;
     int age;
+    PetOwner expectedOwner = null;
 
 
     public Pet() {
@@ -45,6 +46,7 @@ public abstract class Pet implements Animal {
     public Pet(String name, int age) {
         this.name=name;
         this.age =age;
+        PetOwner expectedOwner = null;
     }
 
     /**
@@ -71,19 +73,26 @@ public abstract class Pet implements Animal {
         this.age = age;
     }
 
+
+
+
     /**
      * @param newPetOwner the new owner of this pet
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
 
-        //PetOwner po = new PetOwner("null", null);
-
-
-      // po.isOwnerOf(null);
+        this.expectedOwner = newPetOwner;
 
 
     }
+    public void getOwner(PetOwner newPetOwner) {
+
+        this.expectedOwner = expectedOwner;
+
+
+    }
+
 
 
 
